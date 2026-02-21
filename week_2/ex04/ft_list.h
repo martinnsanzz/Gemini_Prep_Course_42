@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_last.c                                     :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: 2002mssm02 <2002mssm02@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/21 11:29:17 by 2002mssm02        #+#    #+#             */
-/*   Updated: 2026/02/21 12:50:53 by 2002mssm02       ###   ########.fr       */
+/*   Created: 2026/02/21 12:52:23 by 2002mssm02        #+#    #+#             */
+/*   Updated: 2026/02/21 13:21:14 by 2002mssm02       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-t_list	*ft_list_last(t_list *begin_list)
+# include <stdlib.h>
+
+typedef struct s_list
 {
-	if (begin_list == NULL)
-		return (NULL);
-	while (begin_list->next != NULL)
-		begin_list = begin_list->next;
-	return (begin_list);
-}
+	void			*data;
+	struct s_list	*next;
+}	t_list;
+
+t_list	*ft_create_elem(void *data);
+
+#endif
